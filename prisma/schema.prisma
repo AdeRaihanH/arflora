@@ -10,10 +10,73 @@ datasource db {
   provider = "postgresql"
 }
 
-model User {
-  id        Int      @id @default(autoincrement())
-  email     String   @unique
-  name      String?
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
+enum OrderStatus {
+  NEW
+  CONFIRMED
+  SENT
+  DONE
+  CANCELLED
+}
+
+model Category {
+  id        String    @id @default(cuid())
+  name      String
+  slug      String    @unique
+  sortOrder Int       @default(0)
+  products  Product[]
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @updatedAt
+}
+
+model Product {
+  id          String   @id @default(cuid())
+  name        String
+  slug        String   @unique
+  description String?
+  price       Int
+  imageUrl    String?
+  isActive    Boolean  @default(true)
+  isFeatured  Boolean  @default(false)
+  categoryId  String?
+  category    Category? @relation(fields: [categoryId], references: [id], onDelete: SetNull)
+  orders      Order[]
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  @@index([categoryId])
+  @@index([isActive, isFeatured])
+}
+
+model Order {
+  id           String      @id @default(cuid())
+  code         String      @unique
+  customerName String
+  phone        String
+  address      String?
+  deliveryDate DateTime?
+  qty          Int         @default(1)
+  cardMessage  String?
+  notes        String?
+  total        Int
+  status       OrderStatus @default(NEW)
+  productId    String?
+  product      Product?    @relation(fields: [productId], references: [id], onDelete: SetNull)
+  createdAt    DateTime    @default(now())
+  updatedAt    DateTime    @updatedAt
+
+  @@index([status])
+  @@index([createdAt])
+}
+
+model Setting {
+  key   String @id
+  value String
+}
+
+model AdminUser {
+  id           String   @id @default(cuid())
+  email        String   @unique
+  name         String?
+  passwordHash String
+  createdAt    DateTime @default(now())
 }
