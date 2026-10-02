@@ -585,22 +585,22 @@ export function CustomBouquetBuilder() {
   // WhatsApp checkout message generator
   const whatsappUrl = useMemo(() => {
     let msg = `Halo Arflora, saya ingin memesan Custom Rangkaian Bunga Kawat Bulu:\n\n`;
-    msg += `📦 *UKURAN & TIPE BUKET:*\n`;
+    msg += `*UKURAN & MODEL BUKET:*\n`;
     msg += `• Ukuran: ${selectedSize.name} (Maks ${selectedSize.maxStems} bunga)\n`;
 
     if (bouquetStyle === "standar") {
-      msg += `• Tipe: Buket Standar (Front-Facing Layered) (+${formatRupiah(selectedSize.wrapPrice)})\n`;
+      msg += `• Model: Buket Standar (Front-Facing Layered) (+${formatRupiah(selectedSize.wrapPrice)})\n`;
       msg += `  - Kertas Wrapping: ${selectedWrapping.name}\n`;
       msg += `  - Pita: ${selectedRibbon}\n`;
     } else if (bouquetStyle === "round") {
-      msg += `• Tipe: Round Bouquet 360° (+${formatRupiah(selectedSize.wrapPrice)})\n`;
+      msg += `• Model: Round Bouquet 360° (+${formatRupiah(selectedSize.wrapPrice)})\n`;
       msg += `  - Kertas Wrapping: ${selectedWrapping.name}\n`;
       msg += `  - Pita: ${selectedRibbon}\n`;
     } else {
-      msg += `• Tipe: Tangkai Lepas / Single Stems (Tanpa Kertas Buket)\n`;
+      msg += `• Model: Tangkai Lepas / Single Stems (Tanpa Wrapping)\n`;
     }
 
-    msg += `\n🌸 *RINCIAN BUNGA (${totalStems}/${selectedSize.maxStems} Tangkai):*\n`;
+    msg += `\n*RINCIAN BUNGA (${totalStems}/${selectedSize.maxStems} Tangkai):*\n`;
     if (itemsList.length === 0) {
       msg += `- Belum ada bunga dipilih\n`;
     } else {
@@ -610,17 +610,17 @@ export function CustomBouquetBuilder() {
     }
 
     if (cardMessage.trim()) {
-      msg += `\n💌 *KARTU UCAPAN (GRATIS):*\n"${cardMessage.trim()}"\n`;
+      msg += `\n*KARTU UCAPAN:*\n"${cardMessage.trim()}"\n`;
     }
 
     if (specialRequest.trim()) {
-      msg += `\n📝 *CATATAN KHUSUS:*\n${specialRequest.trim()}\n`;
+      msg += `\n*CATATAN KHUSUS:*\n${specialRequest.trim()}\n`;
     }
 
-    msg += `\n💰 *TOTAL BIAYA:* ${formatRupiah(grandTotal)}\n\n`;
+    msg += `\n*TOTAL ESTIMASI:* ${formatRupiah(grandTotal)}\n\n`;
 
     if (customerName.trim() || customerPhone.trim() || customerAddress.trim()) {
-      msg += `👤 *DATA PEMESAN:*\n`;
+      msg += `*DATA PEMESAN:*\n`;
       if (customerName.trim()) msg += `• Nama: ${customerName.trim()}\n`;
       if (customerPhone.trim()) msg += `• No. HP: ${customerPhone.trim()}\n`;
       if (customerAddress.trim()) msg += `• Alamat: ${customerAddress.trim()}\n`;
@@ -873,7 +873,7 @@ export function CustomBouquetBuilder() {
               </h2>
             </div>
             <p className="text-xs font-medium text-ink-soft">
-              💡 Sistem akan <strong>otomatis menyusun bunga</strong>: matahari/mawar di tengah, tulip di samping!
+              Simulasi tata letak otomatis: bunga fokus di tengah, aksen tulip di sisi samping.
             </p>
           </div>
 
@@ -1003,7 +1003,7 @@ export function CustomBouquetBuilder() {
                 rows={3}
                 value={cardMessage}
                 onChange={(e) => setCardMessage(e.target.value)}
-                placeholder="Tulis pesanmu di sini (misal: Selamat ulang tahun! Semoga harimu seindah bunga ini ✨)"
+                placeholder="Tulis pesanmu di sini (misal: Selamat hari kelulusan! Semoga senantiasa sukses)"
                 className="mt-1.5 w-full rounded-xl border border-brand/20 bg-cream-light/40 px-3.5 py-2.5 text-sm text-ink placeholder:text-ink-soft/50 focus:border-brand focus:bg-white focus:outline-none focus:ring-2 focus:ring-brand/15"
               />
             </div>
@@ -1077,10 +1077,10 @@ export function CustomBouquetBuilder() {
             <div className="flex items-center justify-between border-b border-brand/10 pb-3">
               <div>
                 <span className="font-display text-sm font-bold text-brand">
-                  💐 Susunan Buket Real-Time
+                  Simulasi Tata Letak Buket
                 </span>
                 <p className="text-[0.68rem] text-ink-soft">
-                  Otomatis teratur seperti buket florist sungguhan
+                  Otomatis tersusun proporsional sesuai kaidah florist
                 </p>
               </div>
               <span className="rounded-full bg-brand px-3 py-1 font-display text-xs font-bold text-cream">
@@ -1096,10 +1096,10 @@ export function CustomBouquetBuilder() {
                     <BotanicalSketch type="tulip" colorHex="#E78B7E" size={56} />
                   </div>
                   <p className="font-display text-base font-bold text-brand-dark">
-                    Buket Belum Berisi Bunga
+                    Buket Masih Kosong
                   </p>
                   <p className="mt-1 text-xs text-ink-soft">
-                    Pilih bunga di sebelah kiri untuk melihat buketmu otomatis tersusun rapi di sini!
+                    Pilih bunga di sebelah kiri untuk melihat buketmu otomatis tersusun di sini.
                   </p>
                 </div>
               ) : (
@@ -1147,8 +1147,8 @@ export function CustomBouquetBuilder() {
 
                       {/* Ribbon */}
                       <div className="absolute -bottom-2.5 left-1/2 -translate-x-1/2 z-40">
-                        <div className="flex items-center gap-1 rounded-full border border-brand/20 bg-white/95 px-3.5 py-1 text-[0.68rem] font-bold text-brand-dark shadow-xs backdrop-blur">
-                          🎀 {selectedRibbon.split(" ")[1]}
+                        <div className="flex items-center gap-1 rounded-full border border-brand/20 bg-white/95 px-3.5 py-1 text-[0.68rem] font-medium text-brand-dark shadow-xs backdrop-blur">
+                          <span>Pita: {selectedRibbon}</span>
                         </div>
                       </div>
                     </div>
@@ -1172,16 +1172,16 @@ export function CustomBouquetBuilder() {
                       </div>
                       <div className="mx-auto -mt-2 h-10 w-8 rounded-b-xl border border-brand/20 bg-[#F1E2C8]" />
                       <div className="absolute bottom-2 left-1/2 -translate-x-1/2 z-40">
-                        <div className="rounded-full border border-brand/20 bg-white/95 px-3 py-0.5 text-[0.65rem] font-bold text-brand-dark shadow-xs">
-                          🎀 {selectedRibbon.split(" ")[1]}
+                        <div className="rounded-full border border-brand/20 bg-white/95 px-3 py-0.5 text-[0.65rem] font-medium text-brand-dark shadow-xs">
+                          <span>Pita: {selectedRibbon}</span>
                         </div>
                       </div>
                     </div>
                   )}
 
                   {bouquetStyle === "lepas" && (
-                    <div className="relative z-30 mt-4 rounded-full border border-dashed border-brand/30 bg-white/90 px-4 py-1.5 text-xs font-semibold text-brand-dark shadow-xs">
-                      🌾 Tangkai Lepas / Single Stems (Tanpa Wrap)
+                    <div className="relative z-30 mt-4 rounded-full border border-dashed border-brand/30 bg-white/90 px-4 py-1.5 text-xs font-medium text-brand-dark shadow-xs">
+                      Tangkai Lepas (Tanpa Wrapping Buket)
                     </div>
                   )}
                 </div>
@@ -1190,7 +1190,7 @@ export function CustomBouquetBuilder() {
 
             <div className="mt-4 flex items-center justify-between border-t border-brand/10 pt-3 text-[0.7rem] text-ink-soft">
               <span>Bunga Utama: Tengah</span>
-              <span>Tulip/Lili: Samping</span>
+              <span>Tulip/Lili: Sisi Samping</span>
               <span>Daisy: Sela & Atas</span>
             </div>
           </div>
@@ -1198,7 +1198,7 @@ export function CustomBouquetBuilder() {
           {/* Pricing & Order Breakdown */}
           <div className="rounded-3xl border border-brand/15 bg-white p-6 shadow-xs">
             <h3 className="font-display text-xl font-bold text-brand">
-              Rincian Pembayaran
+              Rincian Pemesanan
             </h3>
 
             <div className="mt-4 space-y-2 border-b border-brand/10 pb-4 text-xs">
@@ -1254,16 +1254,19 @@ export function CustomBouquetBuilder() {
                     alert("Silakan pilih minimal 1 tangkai bunga untuk memesan.");
                   }
                 }}
-                className={`flex w-full items-center justify-center gap-2 rounded-full px-6 py-4 text-center font-display text-sm font-bold shadow-md transition-all ${
+                className={`flex w-full items-center justify-center gap-2.5 rounded-full px-6 py-4 text-center font-display text-sm font-semibold shadow-md transition-all ${
                   totalStems > 0
-                    ? "bg-brand text-cream shadow-brand/20 hover:scale-[1.02] hover:bg-brand-dark hover:shadow-lg"
+                    ? "bg-brand text-cream shadow-brand/20 hover:scale-[1.01] hover:bg-brand-dark hover:shadow-lg"
                     : "cursor-not-allowed bg-black/10 text-ink-soft opacity-60"
                 }`}
               >
-                <span>💬 Pesan via WhatsApp Sekarang</span>
+                <svg className="h-4 w-4 shrink-0 fill-current" viewBox="0 0 24 24">
+                  <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.312.045-.694.072-2.122-.52-1.825-.757-3.003-2.617-3.094-2.738-.09-.12-0.741-.987-.741-1.884 0-.897.469-1.339.636-1.518.167-.18.365-.225.487-.225.121 0 .243.002.348.007.111.005.259-.042.405.31.149.362.51 1.244.554 1.334.045.09.075.195.015.315-.059.12-.089.195-.178.299-.089.105-.188.234-.268.315-.09.09-.184.188-.079.368.105.18.468.772 1.004 1.25.688.614 1.269.805 1.449.895.18.09.285.075.39-.045.105-.12.45-.524.57-.704.12-.18.24-.15.405-.09.165.06 1.05.495 1.23.585.18.09.3.135.345.21.045.075.045.435-.099.84z"/>
+                </svg>
+                <span>Pesan Rangkaian via WhatsApp</span>
               </a>
               <p className="mt-2.5 text-center text-[0.68rem] text-ink-soft">
-                Pesan WhatsApp otomatis terangkum rapi dengan detail ukuran buket, jenis & warna bunga, model wrapping, dan kartu ucapan.
+                Pesan WhatsApp otomatis terangkum dengan rincian ukuran buket, bunga, warna, wrapping, dan kartu ucapan.
               </p>
             </div>
           </div>

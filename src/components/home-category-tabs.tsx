@@ -39,13 +39,13 @@ export function HomeCategoryTabs({ products }: Props) {
         <button
           type="button"
           onClick={() => setActiveTab("buket-sedang")}
-          className={`group flex items-center gap-2.5 rounded-full px-6 py-3.5 text-sm font-bold transition-all duration-300 ${
+          className={`group flex items-center gap-2.5 rounded-full px-6 py-3.5 text-sm font-semibold transition-all duration-300 ${
             activeTab === "buket-sedang"
               ? "bg-brand text-cream shadow-md shadow-brand/25 ring-2 ring-brand/30 scale-105"
               : "border border-brand/15 bg-white text-ink-soft hover:border-brand/40 hover:bg-cream-light hover:text-brand"
           }`}
         >
-          <span className="flex h-5 w-5 items-center justify-center rounded-full bg-accent/20 text-xs">🌸</span>
+          <span className="h-2 w-2 rounded-full bg-accent" />
           <span>Buket Sedang</span>
           <span
             className={`rounded-full px-2.5 py-0.5 text-[0.68rem] font-bold ${
@@ -60,13 +60,13 @@ export function HomeCategoryTabs({ products }: Props) {
         <button
           type="button"
           onClick={() => setActiveTab("buket-besar")}
-          className={`group flex items-center gap-2.5 rounded-full px-6 py-3.5 text-sm font-bold transition-all duration-300 ${
+          className={`group flex items-center gap-2.5 rounded-full px-6 py-3.5 text-sm font-semibold transition-all duration-300 ${
             activeTab === "buket-besar"
               ? "bg-brand text-cream shadow-md shadow-brand/25 ring-2 ring-brand/30 scale-105"
               : "border border-brand/15 bg-white text-ink-soft hover:border-brand/40 hover:bg-cream-light hover:text-brand"
           }`}
         >
-          <span className="flex h-5 w-5 items-center justify-center rounded-full bg-accent/20 text-xs">💐</span>
+          <span className="h-2 w-2 rounded-full bg-sprout" />
           <span>Buket Besar</span>
           <span
             className={`rounded-full px-2.5 py-0.5 text-[0.68rem] font-bold ${
@@ -81,20 +81,20 @@ export function HomeCategoryTabs({ products }: Props) {
         <button
           type="button"
           onClick={() => setActiveTab("single-flower")}
-          className={`group flex items-center gap-2.5 rounded-full px-6 py-3.5 text-sm font-bold transition-all duration-300 ${
+          className={`group flex items-center gap-2.5 rounded-full px-6 py-3.5 text-sm font-semibold transition-all duration-300 ${
             activeTab === "single-flower"
               ? "bg-brand text-cream shadow-md shadow-brand/25 ring-2 ring-brand/30 scale-105"
               : "border border-brand/15 bg-white text-ink-soft hover:border-brand/40 hover:bg-cream-light hover:text-brand"
           }`}
         >
-          <span className="flex h-5 w-5 items-center justify-center rounded-full bg-accent/20 text-xs">🌷</span>
+          <span className="h-2 w-2 rounded-full bg-gold" />
           <span>Single Flower (Buket Kecil)</span>
           <span
             className={`rounded-full px-2.5 py-0.5 text-[0.68rem] font-bold ${
               activeTab === "single-flower" ? "bg-sprout text-brand-deep" : "bg-black/5 text-ink-soft"
             }`}
           >
-            Manis & Simpel
+            Koleksi Simpel
           </span>
         </button>
 
@@ -102,16 +102,18 @@ export function HomeCategoryTabs({ products }: Props) {
         <button
           type="button"
           onClick={() => setActiveTab("custom")}
-          className={`group flex items-center gap-2.5 rounded-full px-6 py-3.5 text-sm font-bold transition-all duration-300 ${
+          className={`group flex items-center gap-2.5 rounded-full px-6 py-3.5 text-sm font-semibold transition-all duration-300 ${
             activeTab === "custom"
-              ? "bg-gradient-to-r from-accent to-accent-dark text-white shadow-md shadow-accent/30 ring-2 ring-accent/40 scale-105"
+              ? "bg-brand-dark text-cream shadow-md shadow-black/20 ring-2 ring-brand scale-105"
               : "border border-accent/40 bg-accent-soft text-accent-dark hover:bg-accent hover:text-white"
           }`}
         >
-          <span>✨</span>
+          <svg className="h-3.5 w-3.5 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M12 4v16m8-8H4" />
+          </svg>
           <span>Rangkai Sendiri</span>
           <span className="rounded-full bg-white/90 px-2.5 py-0.5 text-[0.68rem] font-bold text-accent-dark">
-            Custom Studio
+            Studio Kustom
           </span>
         </button>
       </div>
@@ -121,40 +123,52 @@ export function HomeCategoryTabs({ products }: Props) {
         <div className="overflow-hidden rounded-3xl border border-brand/15 bg-gradient-to-br from-cream via-sprout-soft/40 to-accent-soft p-8 sm:p-12 shadow-sm transition-all">
           <div className="grid items-center gap-8 lg:grid-cols-2">
             <div>
-              <span className="rounded-full bg-brand px-3.5 py-1 text-xs font-bold text-cream">
-                🎨 Fitur Baru: Studio Rangkai Bunga
+              <span className="rounded-full bg-brand px-3.5 py-1 text-xs font-semibold text-cream">
+                Studio Rangkai Kustom
               </span>
               <h3 className="mt-4 font-display text-3xl text-brand sm:text-4xl">
-                Bebas Racik Bunga, Warna & Ukuran Buketmu!
+                Rangkai Sendiri Bunga, Warna & Ukuran Buketmu
               </h3>
               <p className="mt-3 text-sm leading-relaxed text-ink-soft sm:text-base">
-                Punya ide buket kado sendiri? Di Arflora kamu bisa:
+                Ingin kombinasi buket yang personal untuk orang tersayang? Di studio kustom Arflora, kamu bisa leluasa menentukan:
               </p>
-              <ul className="mt-4 space-y-2 text-xs font-semibold text-brand-dark sm:text-sm">
-                <li className="flex items-center gap-2">
-                  <span className="text-accent">✓</span> Pilih ukuran buket: Kecil (maks 5 bunga), Sedang (maks 15), atau Besar (maks 30)
+              <ul className="mt-4 space-y-2.5 text-xs font-medium text-brand-dark sm:text-sm">
+                <li className="flex items-center gap-2.5">
+                  <svg className="h-4 w-4 shrink-0 text-brand" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M5 13l4 4L19 7" />
+                  </svg>
+                  <span>Pilihan ukuran buket: Kecil (maks 5 bunga), Sedang (maks 15), atau Besar (maks 30)</span>
                 </li>
-                <li className="flex items-center gap-2">
-                  <span className="text-accent">✓</span> Pilih tipe: Buket Standar (layered wrap) atau Round Bouquet (dome 360°)
+                <li className="flex items-center gap-2.5">
+                  <svg className="h-4 w-4 shrink-0 text-brand" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M5 13l4 4L19 7" />
+                  </svg>
+                  <span>Model wrapping: Buket Standar (layered wrap) atau Round Bouquet (dome 360°)</span>
                 </li>
-                <li className="flex items-center gap-2">
-                  <span className="text-accent">✓</span> Pilih jenis bunga (matahari, tulip, daisy, lili, mawar) & bebas custom warna kelopak
+                <li className="flex items-center gap-2.5">
+                  <svg className="h-4 w-4 shrink-0 text-brand" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M5 13l4 4L19 7" />
+                  </svg>
+                  <span>Pilihan bunga: matahari, tulip, daisy, lili, mawar dengan custom warna kelopak</span>
                 </li>
-                <li className="flex items-center gap-2">
-                  <span className="text-accent">✓</span> Sistem otomatis menata bunga layaknya buket florist asli secara real-time!
+                <li className="flex items-center gap-2.5">
+                  <svg className="h-4 w-4 shrink-0 text-brand" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M5 13l4 4L19 7" />
+                  </svg>
+                  <span>Simulasi tata letak bunga otomatis sesuai kaidah floristry secara real-time</span>
                 </li>
               </ul>
 
               <div className="mt-8 flex flex-wrap items-center gap-4">
                 <Link
                   href="/rangkai-sendiri"
-                  className="inline-flex items-center gap-2 rounded-full bg-brand px-8 py-4 font-display text-sm font-bold text-cream shadow-md shadow-brand/20 transition-all hover:scale-105 hover:bg-brand-dark"
+                  className="inline-flex items-center gap-2 rounded-full bg-brand px-8 py-3.5 font-display text-sm font-semibold text-cream shadow-md shadow-brand/20 transition-all hover:bg-brand-dark"
                 >
-                  <span>Mulai Rangkai di Studio</span>
+                  <span>Buka Studio Rangkai</span>
                   <span>&rarr;</span>
                 </Link>
-                <span className="text-xs font-medium text-ink-soft">
-                  *Hitung harga otomatis & kirim via WhatsApp
+                <span className="text-xs font-normal text-ink-soft">
+                  Perhitungan harga transparan & siap dipesan via WhatsApp
                 </span>
               </div>
             </div>
@@ -197,8 +211,10 @@ export function HomeCategoryTabs({ products }: Props) {
                         className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
                       />
                     ) : (
-                      <div className="flex h-full items-center justify-center font-display text-4xl text-brand/30">
-                        💐
+                      <div className="flex h-full items-center justify-center text-brand/20">
+                        <svg className="h-12 w-12" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                        </svg>
                       </div>
                     )}
 
@@ -244,17 +260,17 @@ export function HomeCategoryTabs({ products }: Props) {
           <div className="flex flex-wrap items-center justify-center gap-4 pt-4 text-center">
             <Link
               href="/katalog"
-              className="inline-flex items-center gap-2 rounded-full border border-brand/20 bg-cream-light px-7 py-3 text-xs font-bold text-brand-dark transition-all hover:border-brand hover:bg-sprout-soft"
+              className="inline-flex items-center gap-2 rounded-full border border-brand/20 bg-cream-light px-7 py-3 text-xs font-semibold text-brand-dark transition-all hover:border-brand hover:bg-sprout-soft"
             >
               <span>Lihat Seluruh Katalog</span>
               <span>&rarr;</span>
             </Link>
             <Link
               href="/rangkai-sendiri"
-              className="inline-flex items-center gap-2 rounded-full bg-sprout px-7 py-3 text-xs font-bold text-brand-deep shadow-xs transition-all hover:bg-cream"
+              className="inline-flex items-center gap-2 rounded-full bg-brand px-7 py-3 text-xs font-semibold text-cream shadow-xs transition-all hover:bg-brand-dark"
             >
-              <span>Mau Rangkai Sendiri? Buka Studio</span>
-              <span>✨</span>
+              <span>Rangkai Sendiri di Studio</span>
+              <span>&rarr;</span>
             </Link>
           </div>
         </div>

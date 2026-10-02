@@ -73,8 +73,8 @@ export default async function HomePage() {
                   <span className="h-1.5 w-1.5 rounded-full bg-sprout" />
                   Buket Kawat Bulu Handmade
                 </span>
-                <span className="rounded-full bg-cream/15 px-3 py-1 text-xs font-semibold text-cream">
-                  Awet Selamanya ✨
+                <span className="rounded-full bg-cream/15 px-3 py-1 text-xs font-medium text-cream">
+                  Awet Bertahun-tahun
                 </span>
               </div>
 
@@ -82,36 +82,35 @@ export default async function HomePage() {
                 as="h1"
                 delay={0.15}
                 lines={[
-                  "Bunga abadi,",
+                  "Bunga buatan tangan,",
                   <Fragment key="line-2">
-                    dirangkai <em className="italic text-blush">spesial</em>
+                    dirangkai <em className="italic text-blush">personal</em>
                   </Fragment>,
-                  "untuk momenmu.",
+                  "untuk momen istimewamu.",
                 ]}
                 className="mt-6 font-display text-[clamp(2.8rem,7vw,5.5rem)] leading-[0.98] text-cream"
               />
 
               <Reveal delay={0.35} className="mt-6 max-w-lg">
                 <p className="text-base leading-relaxed text-cream/80 sm:text-lg">
-                  Arflora merangkai buket kawat bulu (pipe cleaner) lembut & estetik:
-                  pilih <strong>Buket Sedang</strong>, <strong>Buket Besar</strong>, <strong>Single Flower</strong>,
-                  atau <strong>Rangkai Bunga Sendiri</strong> custom warna sesukamu!
+                  Arflora menghadirkan buket kawat bulu (pipe cleaner) berkualitas tinggi dengan sentuhan lembut dan estetik.
+                  Pilih ukuran siap kirim atau rancang sendiri perpaduan bunga dan warnamu di studio kustom kami.
                 </p>
               </Reveal>
 
               {/* Quick Size Badges */}
               <Reveal delay={0.45} className="mt-6 flex flex-wrap gap-2 text-xs font-medium text-cream/90">
                 <span className="rounded-xl border border-cream/20 bg-cream/10 px-3 py-1.5 backdrop-blur-xs">
-                  🌸 Buket Sedang
+                  Buket Sedang
                 </span>
                 <span className="rounded-xl border border-cream/20 bg-cream/10 px-3 py-1.5 backdrop-blur-xs">
-                  💐 Buket Besar
+                  Buket Besar
                 </span>
                 <span className="rounded-xl border border-cream/20 bg-cream/10 px-3 py-1.5 backdrop-blur-xs">
-                  🌷 Single Flower
+                  Single Flower
                 </span>
-                <span className="rounded-xl border border-sprout/40 bg-sprout/20 px-3 py-1.5 font-bold text-sprout">
-                  ✨ Rangkai Sendiri (+15k Buket)
+                <span className="rounded-xl border border-sprout/40 bg-sprout/20 px-3 py-1.5 font-semibold text-sprout">
+                  Studio Rangkai Kustom
                 </span>
               </Reveal>
 
@@ -119,10 +118,10 @@ export default async function HomePage() {
                 <Magnetic strength={0.3}>
                   <Link
                     href="/rangkai-sendiri"
-                    className="inline-flex items-center gap-2 rounded-full bg-sprout px-8 py-4 font-display text-sm font-bold text-brand-deep shadow-lg shadow-black/25 transition-all hover:scale-105 hover:bg-cream"
+                    className="inline-flex items-center gap-2 rounded-full bg-sprout px-8 py-4 font-display text-sm font-bold text-brand-deep shadow-lg shadow-black/25 transition-all hover:bg-cream"
                   >
                     <span>Rangkai Bunga Sendiri</span>
-                    <span>✨</span>
+                    <span>&rarr;</span>
                   </Link>
                 </Magnetic>
 
@@ -216,8 +215,8 @@ export default async function HomePage() {
 
               {/* Sedang */}
               <div className="relative rounded-2xl border-2 border-brand bg-white p-6 shadow-md transition-all hover:shadow-xl scale-[1.02]">
-                <span className="absolute -top-3 right-6 rounded-full bg-brand px-3 py-0.5 text-[0.68rem] font-bold text-cream shadow-xs">
-                  ★ Paling Favorit
+                <span className="absolute -top-3 right-6 rounded-full bg-brand px-3 py-0.5 text-[0.68rem] font-bold uppercase tracking-wider text-cream shadow-xs">
+                  Paling Favorit
                 </span>
                 <div className="flex items-center justify-between">
                   <span className="rounded-full bg-sprout px-3 py-0.5 text-xs font-bold text-brand-deep">
@@ -227,7 +226,7 @@ export default async function HomePage() {
                 </div>
                 <h4 className="mt-3 font-display text-xl font-bold text-ink">Buket Sedang</h4>
                 <p className="mt-1.5 text-xs leading-relaxed text-ink-soft">
-                  Ukuran paling proporsional! Kombinasi rimbun bunga matahari, tulip, daisy, dan pita organza berkilau.
+                  Proporsi paling seimbang untuk kado wisuda atau ulang tahun, memadukan bunga fokus dan bunga pendukung.
                 </p>
                 <div className="mt-4 border-t border-brand/10 pt-3">
                   <span className="text-[0.68rem] text-ink-soft">Mulai dari:</span>
@@ -338,9 +337,9 @@ export default async function HomePage() {
                 <Magnetic strength={0.3}>
                   <Link
                     href="/rangkai-sendiri"
-                    className="inline-flex rounded-full bg-brand px-8 py-4 text-sm font-bold text-cream shadow-md shadow-brand/20 transition-all hover:bg-brand-dark hover:shadow-lg"
+                    className="inline-flex rounded-full bg-brand px-8 py-4 text-sm font-semibold text-cream shadow-md shadow-brand/20 transition-all hover:bg-brand-dark hover:shadow-lg"
                   >
-                    Rangkai Bunga Sendiri ✨
+                    Rangkai Bunga Sendiri
                   </Link>
                 </Magnetic>
                 <a

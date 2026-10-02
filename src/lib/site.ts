@@ -13,7 +13,7 @@ export const site = {
 export const nav = [
   { label: "Beranda", href: "/" },
   { label: "Katalog", href: "/katalog" },
-  { label: "Rangkai Sendiri ✨", href: "/rangkai-sendiri" },
+  { label: "Rangkai Sendiri", href: "/rangkai-sendiri" },
   { label: "Cara Pesan", href: "/cara-pesan" },
   { label: "Tentang", href: "/tentang" },
   { label: "Kontak", href: "/kontak" },
